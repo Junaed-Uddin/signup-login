@@ -1,0 +1,8 @@
+li a{
+    background-color: rgba(218, 216, 216, 0.452);
+    color: black;
+}
+
+li a.active{
+    color: white !important;
+}
