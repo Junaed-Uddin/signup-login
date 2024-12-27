@@ -26,8 +26,8 @@ This project is a simple React-based application designed to demonstrate the imp
 5. **Verification Email**  
    A verification email is sent after successful registration to confirm the user's email address.
 
-6. **Get Current User**  
-   Retrieve details of the currently signed-in user, such as their email and username.
+6. **User Session Management**  
+   Manage user sessions to determine signed-in or signed-out states.
 
 7. **Sign Out**  
    Users can securely log out of the application.
