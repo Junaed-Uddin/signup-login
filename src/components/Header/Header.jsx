@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import "./Header.css";
+import userProfile from "../../../image/user.png";
 
 const Header = () => {
   const navLinks = (
@@ -62,19 +63,45 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl">AuthTech</a>
+          <a className="text-3xl">AuthTech</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-3">{navLinks}</ul>
         </div>
+
         <div className="navbar-end">
           {user ? (
-            <button
-              onClick={handleLogout}
-              className="btn btn-sm h-10 btn-primary text-white"
-            >
-              Sign out
-            </button>
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-11 rounded-full">
+                  <img alt="user-profile" src={userProfile} />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm space-y-2 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-40 p-2 shadow"
+              >
+                <li>
+                  <Link className="py-2 bg-gray-100" aria-disabled>
+                    {user.displayName.length > 2
+                      ? user.displayName.split(" ")[0]
+                      : user.displayName}
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className="bg-gray-100 text-black"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <Link
               to={"/login"}
