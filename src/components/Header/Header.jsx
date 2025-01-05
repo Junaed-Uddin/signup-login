@@ -103,7 +103,7 @@ const Header = () => {
           ) : (
             <Link
               to={"/login"}
-              className="btn btn-sm h-10 px-5 bg-violet-600 text-white"
+              className="btn btn-sm h-10 px-5 bg-violet-600 hover:bg-blue-600 text-white"
             >
               Sign in
             </Link>
