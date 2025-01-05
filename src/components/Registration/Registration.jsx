@@ -114,6 +114,11 @@ const Registration = () => {
   // submit handler
   const handleRegistration = (e) => {
     e.preventDefault();
+
+    if (errorMsg || successMsg) {
+      return;
+    }
+
     setLoadingSpinner(true);
     let name = e.target.name.value;
     let terms = e.target.checkbox.checked;

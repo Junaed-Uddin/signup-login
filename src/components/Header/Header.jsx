@@ -87,9 +87,7 @@ const Header = () => {
               >
                 <li>
                   <Link className="py-2 bg-gray-100" aria-disabled>
-                    {user.displayName.length > 2
-                      ? user.displayName.split(" ")[0]
-                      : user.displayName}
+                    {user ? user?.displayName : ""}
                   </Link>
                 </li>
                 <li>
