@@ -37,8 +37,8 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-40">
-      <div className="navbar bg-gray-100">
-        <div className="navbar-start ">
+      <div className="navbar bg-gray-100 py-4 px-5">
+        <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -63,7 +63,7 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="text-3xl">AuthTech</a>
+          <Link to={`/`} className="text-3xl font-semibold">AuthTech</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 space-x-3">{navLinks}</ul>
@@ -103,7 +103,7 @@ const Header = () => {
           ) : (
             <Link
               to={"/login"}
-              className="btn btn-sm h-10 btn-primary text-white"
+              className="btn btn-sm h-10 px-5 bg-violet-600 text-white"
             >
               Sign in
             </Link>
